@@ -1,0 +1,10 @@
+.container-fluid
+	#steps.text-center
+		.h1 Steps to Apply
+		%ol
+			%li Select your College
+	.margin
+	= simple_form_for @request , defaults: {maxlength: 200,minlength:2} do |f|
+		=f.association :college 
+		
+		=f.submit 'Conitnue to Form' , class:'btn btn-success'

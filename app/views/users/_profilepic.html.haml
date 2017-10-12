@@ -1,0 +1,14 @@
+#Request_status.modal.fade{'tabindex':-1 , 'role':'dialog','aria-labelledby':'settingsmodaldropdown'}
+	.modal-dialog.modal-lg{'role':'document'}
+		.modal-content
+			.modalheader
+				.lead.text-center
+					Request Status
+			.container-fluid
+				.h3 Status:
+				.h4
+					Status for Request number #
+					=@request.id
+					is
+					=@request.status.current_status
+					%small= 'Requested by: '+@request.fullname

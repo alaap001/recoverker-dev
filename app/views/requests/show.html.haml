@@ -1,0 +1,8 @@
+.container-fluid
+	.h3 Status:
+	.h4
+		Status for Request number #
+		=@request.id
+		is
+		=@request.status.current_status
+		%small= 'Requested by: '+@request.fullname

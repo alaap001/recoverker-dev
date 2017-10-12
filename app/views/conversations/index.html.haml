@@ -1,0 +1,10 @@
+%li.clearfix.list-group-item
+	- @conversations.each do |c|
+		= link_to c.subject, conversation_path(conversation) 
+
+		<% @conversation.receipts_for(current_user).each do |receipt| %>
+        <% message = receipt.message %>
+
+        <%= message.sender.name %>
+          says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
+        <%= message.body %>

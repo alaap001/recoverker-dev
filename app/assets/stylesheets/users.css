@@ -1,0 +1,11 @@
+#user_dp{
+	height: 200px;
+}
+#user_dp img{
+	height: 100%;
+	width: 100%;
+}
+#user_name{
+	font-weight: 800;
+	font-size: 18px;
+}

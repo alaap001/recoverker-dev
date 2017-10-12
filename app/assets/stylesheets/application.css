@@ -1,0 +1,190 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require home
+ *= require users
+ *= require conversations
+ *= require_self
+ */
+
+/* home css */
+.glyphicon-user{
+	color: black;
+}
+.logo a{
+	text-decoration: none;
+	color: black;
+}
+.detail{
+	height: 300px;
+}
+.detail img{
+	height: 100%;
+	width: 100%;
+}
+.margin{
+	height: 30px;
+}
+.footer{
+	height: 180px;
+	padding-top: 50px;
+	margin-bottom: 10px;
+}
+#corousal_home{
+	height: 500px;
+}
+#carousel_home img{
+	width: 100%;
+	height: 100%;
+}
+.icon{
+	height: 22px;
+	widows: 22px;
+}
+.navbar{
+	background-color: white;
+}
+
+#div1{
+	background-image: url(bg_2);
+	height: 900px;
+	width: 100%;
+		overflow: hidden;
+	text-align: center;
+	color: #fff;
+	padding: 100px 0 100px 0; 
+	background-size: cover;
+}
+#div1 p{
+	font-size: 60px;
+font-weight: 900;
+margin-top: 170px;
+}
+.iphone6{
+	height: 650px;
+}
+
+@media only screen and (max-width: 600px){
+
+#div1{
+	background-image: url(bg_2);
+	overflow: hidden;
+	height: 800px;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	padding: 120px 15px 100px 0px; 
+	background-size: cover;
+}
+
+#div1 p{
+	font-size: 40px;
+font-weight: 700;
+margin-top: 80px;
+}
+
+.iphone6{
+	height: 450px;
+}
+
+}
+
+#div1 small{
+	font-weight: 500;
+	font-size: 18px;
+}
+
+
+.about_us{
+	background-color: #f5f5f5;
+	padding: 50px 10px 50px 10px;
+}
+.about_us .lead{
+font-size: 45px;
+font-weight: 800;
+}
+.about_us small{
+	font-size: 19px;
+}
+.flashcard{
+	height: 210px;
+	background-color: #fff;
+	margin: 50px 15px 50px 0px;
+}
+.univflashcard{
+	height: 300px;
+	background-color: #fff;
+	margin: 50px 15px 50px 0;
+}
+.univimg{
+	height: 45%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+
+}
+.univflashcard:hover{
+	transition: all .5s;
+	padding-bottom: 10px; 
+	cursor: pointer;
+	box-shadow: 5px 5px 8px grey;
+}
+.univimg:hover{
+transition: all .5s;
+zoom: 120%;
+}
+.faqans{
+	display: none;
+	padding-top: 20px;
+}
+.q{
+	padding: 20px;
+	margin: 0 10px 10px 10px;
+}
+.mybtn{
+	border-radius: 11em;
+	padding: 16px 35px 16px 35px;
+}
+#faq{
+	padding: 80px;
+}
+#faq .h1{
+	font-size: 45px;
+	font-weight: 900;
+}
+#feedback .h1{
+	font-size: 35px;
+	font-weight: 800;
+}
+#faq small{
+	font-size: 50%;
+}
+#question_divs{
+	cursor: pointer;
+	
+	padding: 20px;
+}
+.grey{
+	color: grey;
+}
+.footer{
+	color: white;
+	background-image: url(user_2);
+	background-size: cover;
+	height: 300px;
+}
+
+.footer li{
+display: inline-block;
+	text-decoration: none;
+	margin: 45px 25px 20px 25px;
+}

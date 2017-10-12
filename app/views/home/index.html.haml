@@ -1,0 +1,163 @@
+.margin
+#div1
+	.col-xs-6
+		%p
+			Lost Your Degree ?
+		%small College is hard but not as hard as life without degree
+		.margin
+		.recoverybtn
+			=link_to 'Recover' ,new_request_path , class: 'btn btn-default btn-lg'
+	.col-xs-4.col-sm-offset-1
+		=image_tag 'iphone_6_3' , class:'iphone6'
+
+.about_us.text-center
+	.container
+		.lead
+			About Us
+			%hr
+		%small
+			Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+	.container
+		.col-sm-3
+			.flashcard
+		.col-sm-3
+			.flashcard
+		.col-sm-3
+			.flashcard
+		.col-sm-3
+			.flashcard
+
+.corousal_div
+	#carousel_home.carousel.slide{ 'data-ride':"carousel"}
+		%ol.carousel-indicators
+			%li{'data-target':"#carousel_home" ,'data-slide-to':"0" ,'class':"active"}
+			%li{'data-target':"#carousel_home" ,'data-slide-to':"1"}
+			%li{'data-target':"#carousel_home" , 'data-slide-to':"2"}
+		.carousel-inner{'role':"listbox"}
+			.item.active
+				=image_tag 'flower'
+				.carousel-caption FLower
+
+			.item
+				=image_tag 'Child-Girl-with-Sunflowers-Images'
+				.carousel-caption Child-Girl-with-Sunflowers-Images
+
+			.item
+				=image_tag 'desktop-year-of-the-tiger-images-wallpaper'
+				.carousel-caption desktop-year-of-the-tiger-images-wallpaper
+
+
+		%a.left.carousel-control{'href':"#carousel_home" ,'role':"button", 'data-slide':"prev"}
+			%span.glyphicon.glyphicon-chevron-left{'aria-hidden':"true"}
+		%a.right.carousel-control{'href':"#carousel_home" ,'role':"button", 'data-slide':"next"}
+			%span.glyphicon.glyphicon-chevron-right{'aria-hidden':"true"}
+
+.margin
+#image_detail_row.row
+	.col-sm-4.detail
+		=image_tag '6986083-waterfall-images_Mc3SaMS'
+	.col-sm-4.detail
+		=image_tag 'image-slider-2'
+	.col-sm-4.detail
+		=image_tag 'nasas-images-of-most-remarkable-events-you-cant-miss'
+.margin
+.about_us.text-center
+	.container
+		.lead
+			Associated Universities
+			%hr
+		%small
+			Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+	.container
+		#flashcardunivdiv
+			.col-sm-3
+				.univflashcard
+					=image_tag 'University_1' , class:'univimg'
+					%p.univtxt.text-center
+						.h3
+							Header
+							%br
+							%small
+								University details text
+			.col-sm-3
+				.univflashcard
+					=image_tag 'University_2' , class:'univimg'
+					%p.univtxt.text-center
+						.h3
+							Header
+							%br
+							%small
+								University details text
+			.col-sm-3
+				.univflashcard
+					=image_tag 'University_3' , class:'univimg'
+					%p.univtxt.text-center
+						.h3
+							Header
+							%br
+							%small
+								University details text
+			.col-sm-3
+				.univflashcard
+					=image_tag 'University_4' , class:'univimg'
+					%p.univtxt.text-center
+						.h3
+							Header
+							%br
+							%small
+								University details text
+		=link_to 'More' , partners_path ,class:'btn btn-default btn-lg mybtn'
+%hr
+#faq.container
+	.h1.text-center
+		Frequently Asked Questions
+		%br
+		%small
+			Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+	.margin
+	#question_divs
+		.q1.q
+			.h3
+				What is Recoverker ?
+				%span.caret
+				%br
+
+			.ans.faqans
+				Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
+		%hr
+		.q2.q
+			.h3
+				Is Recoverker free ?
+				%span.caret
+				%br
+
+			.ans2.faqans
+				Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
+		%hr
+#feedback
+	.h1.text-center
+		We Appreciate your feeback
+	.margin
+	-if user_signed_in?
+		= simple_form_for @feedback do |f|
+			.form-group
+				=f.input :content
+				=f.submit "Tell Us What You Think" ,class:'btn btn-warning btn-lg'
+	-else
+		.h2.text-center
+			Create you Account to Provide Feedbacks
+			or 
+			=link_to 'Contact Us' , '#'
+			for any queries.
+			%br
+			=link_to 'Login' , user_session_path , class:'btn btn-warning btn-lg'
+
+.margin
+%footer
+	.footer.text-center
+		.h1
+			Recoverker Footer
+		%ul
+			%li About us
+			%li Support/Contact
+			%li Help

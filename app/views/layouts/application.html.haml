@@ -1,0 +1,51 @@
+!!!
+%html
+	%head
+		%title
+			RecoverKer
+		= csrf_meta_tags
+		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+		= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+	%body
+		.container-fluid
+			=notice
+			=alert
+			%header
+				.text-center.row 
+					.logo.h2.col-sm-4=link_to 'Recoverker' , root_path
+					.col-sm-4{'style':'padding-top:30px;'}
+						- if !user_signed_in?
+							=link_to new_user_session_path do
+								%span.glyphicon.glyphicon-user
+						-else
+							=link_to current_user.firstname+' '+current_user.lastname , current_user
+							%br
+							=link_to 'Sign out' ,destroy_user_session_path, method: :delete , data: {confirm: 'Are you sure ?'}
+					.col-sm-4{'style':'padding-top:30px;'}
+						=link_to new_user_registration_path do
+							%span=image_tag 'track' , class:'icon'
+
+
+				%hr
+				%nav.navbar.navbar-default
+					.container-fluid
+						.navbar-header
+							%button{'type':'buutton','class':'navbar-toggle collapsed','data-toggle':'collapse','data-target':'#college','aria-expanded':"false"}
+								%span.icon-bar
+								%span.icon-bar
+								%span.icon-bar
+						#college.collapse.navbar-collapse
+							%ul.nav.navbar-nav
+								%li=link_to 'Home' , root_path
+								%li=link_to 'Application Process' , root_path
+								%li=link_to 'Apply' , new_request_path
+
+
+							#searchform
+								.navbar-form.navbar-left{'role':'search'}
+									%input{'type':"text" , 'class':"form-control", 'placeholder':"Find your college"}
+									%button.btn.btn-default Submit
+
+		.container-fluid
+			=yield
+

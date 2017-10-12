@@ -1,0 +1,50 @@
+.container-fluid
+	.row
+		.col-xs-3
+			.text-center
+				#user_dp
+					=image_tag @user.userpic
+				#user_name
+					=@user.firstname+' '+@user.lastname
+				#messages
+					= link_to 'Messages', conversations_path
+				#settings
+					=link_to 'Edit Profile',edit_user_registration_path , class:'btn btn-default'
+					
+		.col-xs-7
+			#tabs
+				=#about me
+				.h2.text-center 
+					About Me
+				.margin
+				#myinfo
+					.h4
+						College: 
+						%small=@user.campus
+						%hr
+						Email:
+						%small=@user.email
+						%hr
+						Gender:
+						%small=@user.gender
+						%hr
+						Last Seen:
+						%small=@user.current_sign_in_at
+				.margin
+				-if @user == current_user
+					.h2.text-center 
+						Track your Requests
+						%hr
+						%small
+							#requests
+								-@requests.each do |r|
+									=#link_to 'Request Id # '+r.id.to_s,'#' , 'data-toggle':"modal",'disabled':'disabled','data-request': "<%= r %>",'data-target':"#Request_status" 
+									=link_to  'Request Id # '+r.id.to_s , r
+									= r.college.name
+									='; '+r.status.current_status
+									%hr
+
+
+
+=#render 'profilepic'
+

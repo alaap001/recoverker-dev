@@ -1,0 +1,18 @@
+.container-fluid
+	.lead.text-center
+		Personal Details
+	#request_personal_form
+		= simple_form_for @request , defaults:{required: true},url: wizard_path do |f|
+			=f.input :fullname 
+			=f.input :fathername
+			=f.input :email , as: :email
+			=f.input :contact , as: :tel 
+			=f.input :address_1
+			=f.input :address_2, required: false
+			=f.input :state, required: false
+			=f.input :city, required: false
+			=f.input :zipcode , as: :integer, required: false
+
+			= f.submit "Continue" , class:'btn btn-success'
+			=link_to 'Previous' , previous_wizard_path
+	.margin
