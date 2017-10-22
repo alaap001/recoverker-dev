@@ -17,7 +17,6 @@
 //= require_tree .
 
 $(document).ready(function(){
-	console.log($('.q1'))
 $(document).on('click','.q1',function(){
 	$(this).closest('.q1').find('.ans').slideToggle();
 

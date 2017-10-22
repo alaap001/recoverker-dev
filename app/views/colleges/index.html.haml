@@ -1,0 +1,30 @@
+#index_main_div.container-fluid
+	.container-fluid
+		#searchdiv.col-sm-9.col-xs-12
+			.lead.text-center
+				= @college.count 
+				Results match your search
+			-@college.each do |college|
+				-if @college.any?
+					#searchresult
+						%table{'style':'width: 100%;'}
+							%tr
+								%td.searchimage
+									- if college.image?
+										=image_tag college.profilepic , class: ' college_image'
+								%td{'style':'width:10px;'}
+								%td 
+									%table
+										%tr
+											%td
+												.h3=college.name
+										%tr
+											%td{'style':'height: 10px;'}
+												
+
+								
+				-else
+					No College match the given query
+				.lead
+					Some suggested colleges are :-
+											

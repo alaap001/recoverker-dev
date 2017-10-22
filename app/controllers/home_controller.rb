@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+	
 def index
 	if session[:current_request] != nil
 		session.delete(:current_request)

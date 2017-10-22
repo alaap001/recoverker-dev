@@ -5,7 +5,7 @@ ActiveAdmin.register Request do
  permit_params :fullname,:email,:contact,:reason,:address_1,:address_2,:state,:city,:zipcode,:enrollment_no,:batch,:course,:extras,:college_id,:fircopy,:year_of_exam,:semester,:fathername, :hsemployer, :hsuniversity, :hsprogramme
 #
 
-scope :passed
+#scope :passed
 
 index do
 column :id , sortable: true

@@ -11,10 +11,4 @@ validates :email , format: {with: VALID_EMAIL_REGEX} , presence: true , uniquene
 has_many :requests
 mount_uploader :userpic, UserpicUploader
 acts_as_messageable
-def name
-  return self.fullname
-end
-
-
-
 end

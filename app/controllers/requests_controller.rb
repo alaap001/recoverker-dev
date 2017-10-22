@@ -11,9 +11,9 @@ class RequestsController < ApplicationController
     flash[:error]="Invalid URL"
   end
   end
-  def new
-  	@request = current_user.requests.build
-  end
+def new
+@request = current_user.requests.build
+end
   def create
   	@request = current_user.requests.build(request_params) 
     @status = @request.create_status()
@@ -23,7 +23,7 @@ class RequestsController < ApplicationController
 
   	if @request.save
 		session[:current_request] = @request.id
-  		redirect_to request_steps_path
+  		redirect_to @request
   	else
   		render 'new'
   	end
