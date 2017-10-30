@@ -31,9 +31,14 @@
 								Track your Degree
 							-if user_signed_in?		
 								%ul.dropdown-menu
-									-current_user.requests.each do |r|
-										%li=link_to  'Request Id '+r.id.to_s , r
-						
+									- if current_user.requests.count != 0
+										-current_user.requests.each do |r|
+											%li=link_to  'Request Id '+r.id.to_s , r
+									-else 
+										%li 
+											You have no requests
+											%b Make one now, 
+											= link_to 'Apply' , new_request_path 
 
 
 				%hr

@@ -3,7 +3,10 @@
 		.col-xs-3
 			.text-center
 				#user_dp
-					=image_tag @user.userpic
+					- if @user.userpic != nil
+						= image_tag @user.userpic , class: 'img-rounded'
+					-else
+						=image_tag 'dummy'  , class: 'img-rounded'
 				#user_name
 					=@user.firstname+' '+@user.lastname
 				#messages
@@ -37,6 +40,11 @@
 						%hr
 						%small
 							#requests
+								-if @requests.each.count == 0
+									.lead 
+										You have no requests 
+										Make one now, 
+										=link_to 'New Request' , new_request_path
 								-@requests.each do |r|
 									=#link_to 'Request Id # '+r.id.to_s,'#' , 'data-toggle':"modal",'disabled':'disabled','data-request': "<%= r %>",'data-target':"#Request_status" 
 									=link_to  'Request Id # '+r.id.to_s , r
