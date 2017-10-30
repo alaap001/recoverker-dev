@@ -24,10 +24,16 @@
 							%br
 							=link_to 'Sign out' ,destroy_user_session_path, method: :delete , data: {confirm: 'Are you sure ?'}
 					.col-sm-4{'style':'padding-top:30px;'}
-						=link_to new_user_registration_path do
-							%span=image_tag 'track' , class:'icon'
-							%br
-							Track your Degree
+						.dropdown
+							%a.dropdown-toggle{'data-toggle':'dropdown','role':'button','aria-haspopup':'true','aria-expanded':'false'}	
+								%span=image_tag 'track' , class:'icon'
+								%br
+								Track your Degree
+							-if user_signed_in?		
+								%ul.dropdown-menu
+									-current_user.requests.each do |r|
+										%li=link_to  'Request Id '+r.id.to_s , r
+						
 
 
 				%hr

@@ -1,6 +1,7 @@
 class College < ApplicationRecord
 
 has_many :requests
+mount_uploader :image,ImageUploader
 def self.college_search(search)
 if search
     if search.empty?

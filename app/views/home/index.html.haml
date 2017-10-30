@@ -26,8 +26,10 @@
 			.flashcard
 		.col-sm-3
 			.flashcard
+	.text-center
+		=image_tag 'testimonials-1.png'
 
-.corousal_div
+.corousal_div.testimonial
 	#carousel_home.carousel.slide{ 'data-ride':"carousel"}
 		%ol.carousel-indicators
 			%li{'data-target':"#carousel_home" ,'data-slide-to':"0" ,'class':"active"}
@@ -35,16 +37,15 @@
 			%li{'data-target':"#carousel_home" , 'data-slide-to':"2"}
 		.carousel-inner{'role':"listbox"}
 			.item.active
-				=image_tag 'flower'
-				.carousel-caption FLower
-
+				=image_tag 'testimonial-2'
+				.carousel-caption Testimonial 1
 			.item
-				=image_tag 'Child-Girl-with-Sunflowers-Images'
-				.carousel-caption Child-Girl-with-Sunflowers-Images
-
+				=image_tag 'degree'
+				.carousel-caption Testimonial 2
+			
 			.item
-				=image_tag 'desktop-year-of-the-tiger-images-wallpaper'
-				.carousel-caption desktop-year-of-the-tiger-images-wallpaper
+				=image_tag 'bachelors-degree'
+				.carousel-caption Testimonial 3
 
 
 		%a.left.carousel-control{'href':"#carousel_home" ,'role':"button", 'data-slide':"prev"}
@@ -55,11 +56,11 @@
 .margin
 #image_detail_row.row
 	.col-sm-4.detail
-		=image_tag '6986083-waterfall-images_Mc3SaMS'
+		=image_tag 'khamba'
 	.col-sm-4.detail
-		=image_tag 'image-slider-2'
+		=image_tag 'im-lost'
 	.col-sm-4.detail
-		=image_tag 'nasas-images-of-most-remarkable-events-you-cant-miss'
+		=image_tag 'stress'
 .margin
 .about_us.text-center
 	.container
@@ -156,7 +157,7 @@
 %footer
 	.footer.text-center
 		.h1
-			Recoverker Footer
+			Recoverker 
 		%ul
 			%li About us
 			%li Support/Contact

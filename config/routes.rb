@@ -14,5 +14,10 @@ Rails.application.routes.draw do
    resources :feedbacks , only: [:new,:create]
   resources :conversations, only: [:index, :show, :destroy]
    resources :requests , only: [:create,:new,:show]
+   namespace :passwordadmin do 
+    resources :users, only: :show do 
+      post :generate_new_password_email 
+    end 
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
