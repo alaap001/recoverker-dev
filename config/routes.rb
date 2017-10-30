@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :colleges, only: [:index]
 
   get 'partners' , to: 'home#partners', as: :partners 
+  get 'thankyou' , to: 'home#thankyou' , as: :thankyou
    resources :feedbacks , only: [:new,:create]
   resources :conversations, only: [:index, :show, :destroy]
    resources :requests , only: [:create,:new,:show]

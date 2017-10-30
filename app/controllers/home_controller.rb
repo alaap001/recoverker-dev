@@ -13,4 +13,8 @@ end
 def partners
 
 end
+
+def thankyou
+
+	end
 end
