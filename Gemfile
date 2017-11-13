@@ -42,6 +42,7 @@ gem 'rails_autolink'
 gem 'carrierwave'
 gem 'simple_form'
 gem 'wicked'
+gem 'Instamojo-rb', '~> 1.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

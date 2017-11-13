@@ -12,9 +12,9 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/.secret.sh
 
 # Ignore Byebug command history file.
 .byebug_history
 .env
 Procfile
-
