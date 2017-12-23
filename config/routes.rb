@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'colleges/index'
-
-  get 'requests/new'
+  
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -12,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'partners' , to: 'home#partners', as: :partners 
   get 'thankyou' , to: 'home#thankyou' , as: :thankyou
+  get 'requests/payment/:id' , to: 'requests#payment', as: :payment
+
    resources :feedbacks , only: [:new,:create]
   resources :conversations, only: [:index, :show, :destroy]
    resources :requests

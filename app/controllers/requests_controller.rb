@@ -1,39 +1,40 @@
 class RequestsController < ApplicationController
 	before_action :authenticate_user!
-  before_action :find_request , only: [:show,:edit,:update,:destroy]
-	def show
-	if session[:current_request] != nil
-		session.delete(:current_request)
-	end
-    @college = College.find_by(id: @request.college_id)
+  before_action :find_request , only: [:show,:edit,:update,:destroy,:payment]
+	
+  def show
+    @college = College.find_by(id: @request.college_id) 
+
+
+
   end
-def new
-@request = current_user.requests.build
-end
+
+  def new
+    @request = current_user.requests.build
+  end
 
   def create
   	@request = current_user.requests.build(request_params) 
     @status = @request.create_status()
+    
   	#this is invalid and only for dev. purpose
   	# need to associate every request with colg 
   	#rather than forcing int he college  inside form
-
-  	if @request.save
-		session[:current_request] = @request.id
-  		redirect_to @request
-  	else
-  		render 'new'
-  	end
+      if @request.save
+     
+           redirect_to @request
+           puts url
+        else
+    		render 'new'
+    	end
   end
 
   def edit
-
   end
   
   def update
-
     if @request.update(request_params)
-      redirect_to @request
+       redirect_to @request
     else
       render 'edit'
     end
@@ -45,6 +46,27 @@ end
     redirect_to root_path
   end
 
+def payment
+
+ client = $api.client
+ reason = @request.reason
+ phone = @request.contact
+ fullname = @request.fullname
+ email = @request.email
+ #time = Time.now+3.days
+
+
+    #@payment_request = client.payment_request({amount:1020, purpose:reason,phone:phone,buyer_name:fullname, email:email,send_email:true,send_sms:true, redirect_url:'localhost:3000/thankyou'})
+    @payment_request = client.payment_request({amount:100, purpose: reason, send_email: true,phone:phone,buyer_name:fullname, email:email, redirect_url: 'http://ankurgoel.com'})
+    payment_details = client.payment_request_status(@payment_request.id)
+    @request.payment_id = payment_details.id
+    @request.payment_status = payment_details.status
+    @request.payment_url = payment_details.longurl
+    url =  payment_details.longurl    
+    redirect_to url      
+    
+end
+
   private 
 
   def find_request
@@ -55,6 +77,7 @@ end
   end
   end
   def request_params
-  	params.require(:request).permit(:fullname,:email,:contact,:reason,:address_1,:address_2,:state,:city,:fircopy,:zipcode,:fathername,:enrollment_no,:batch,:course,:extras,:college_id,:hsuniversity,:hsprogramme,:hsemployer)
+  	params.require(:request).permit(:fullname,:email,:contact,:reason,:payment_id,:payment_url,:payment_status,:address_1,:address_2,:state,:city,:fircopy,:zipcode,:fathername,:enrollment_no,:batch,:course,:extras,:college_id,:hsuniversity,:hsprogramme,:hsemployer)
   end
+
 end

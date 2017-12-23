@@ -2,11 +2,17 @@
 	.h3.text-centered
 		Request no. 
 		=@request.id
+		%small Please Confirm Your details before proceeding
 	%table.table.table-bordered.table-hover
-		%thead.thead-dark
+		%thead.black_th
 			%tr
-				%th Confirm your details
+				%th Requirments
+				%th Your Details
+
 		%tbody
+			%tr
+				%td
+				%td
 			%tr
 				%th Your Name
 				%td= @request.fullname
@@ -21,10 +27,7 @@
 				%td= @request.contact
 			%tr
 				%th Your address
-				%td= @request.address_1
-				%td= @request.state
-				%td= @request.city
-				%td= @request.zipcode
+				%td= @request.state+', '+@request.city+', '+@request.zipcode+', '+@request.address_1
 			%tr
 				%th Your enrollment number
 				%td= @request.enrollment_no
@@ -39,8 +42,13 @@
 				%td= @college.name
 		
 			%tr
-				%th Institute's recovery fee
-				%td= @request.fullname
+				%th Payment Status
+				%td= @request.payment_status
+
 	=link_to 'edit request' , edit_request_path(@request) , class:'btn btn-primary'
 	=link_to 'delete request' , request_path(@request), method: :delete , data: {Confirm: "Are you sure? This will delete ak your saved information."}  , class:'btn btn-danger'
-	=link_to 'Procees to payment' , '#' , class:'btn btn-success'
+	-if @request.payment_status !='Completed'
+		=link_to 'Make Payment' , payment_path(@request) , class: 'btn btn-success'
+	-else
+		=link_to 'Payment Is Completes' , ' ' , class: 'btn btn-disabled'
+	

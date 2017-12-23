@@ -212,3 +212,7 @@ display: inline-block;
 	text-decoration: none;
 	margin: 45px 25px 20px 25px;
 }
+.black_th{
+background-color: black;
+color: white;
+}

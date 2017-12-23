@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
 
 require 'Instamojo-rb'
 
-api = Instamojo::API.new("c51766be718d7d5e5a5aeff00b83e202","0e268600acb0b7ea8b8414007f5f9fee","https://test.instamojo.com/api/1.1/")
-client = api.client
+$api = Instamojo::API.new("137cf2cf726a9a36123b4d8eac47722b","9f6c0be0367f01ec7fecdce1c142df31")
+
 
 rescue_from ActiveRecord::RecordNotFound do
   flash[:warning] = 'Resource not found.'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171022110828) do
+ActiveRecord::Schema.define(version: 20171223123500) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -129,15 +129,17 @@ ActiveRecord::Schema.define(version: 20171022110828) do
     t.string   "batch"
     t.string   "course"
     t.text     "extras"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "fircopy"
     t.string   "fathername"
     t.string   "hsprogramme"
     t.string   "hsuniversity"
     t.string   "hsemployer"
-    t.integer  "year_of_exam"
     t.integer  "semester"
+    t.string   "payment_status"
+    t.string   "payment_id"
+    t.string   "payment_url"
     t.index ["college_id"], name: "index_requests_on_college_id"
     t.index ["email"], name: "index_requests_on_email"
     t.index ["user_id"], name: "index_requests_on_user_id"
