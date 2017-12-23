@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
   
    before_action :configure_permitted_parameters, if: :devise_controller?
 
+require 'Instamojo-rb'
+
+api = Instamojo::API.new("c51766be718d7d5e5a5aeff00b83e202","0e268600acb0b7ea8b8414007f5f9fee","https://test.instamojo.com/api/1.1/")
+client = api.client
+
 rescue_from ActiveRecord::RecordNotFound do
   flash[:warning] = 'Resource not found.'
   redirect_back_or root_path

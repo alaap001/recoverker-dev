@@ -1,0 +1,38 @@
+.container-fluid
+	#steps.text-center
+		
+	.margin
+	= simple_form_for @request,defaults: {maxlength: 200,minlength:2,required: true} do |f|
+
+		= f.error_notification
+		=f.association :college 
+		=f.input :fullname , label: 'Full Name', error: 'Name is mandatory, please specify one'
+		=f.input :fathername, label: "Father's name", hint: 'Skip the Salutations'
+		%b Email
+		.input-group
+			.input-group-addon
+				@
+			=f.input :email , as: :email, placeholder: 'example@recoverker.com', error: 'Email is mandatory, please specify one', label: false
+		%br
+		=f.input :contact , as: :tel , hint: 'Default country code - +91'
+		=f.input :address_1
+		=f.input :address_2, required: false
+		=f.input :state
+		=f.input :city
+		=f.input :zipcode , as: :integer
+		=f.input :reason, required: false
+		=f.input :enrollment_no , required: false , hint:" leave it blank if you don't remember"
+		=f.input :batch , hint: " Batch pass out year"
+		=f.input :course
+		.lead *`Details of Admission to Courses of Higher Studies/Employment after qualifying your degree from AMITY UNIVERSITY*
+		=f.input :hsemployer , label: "Name and Adress of Employer" , placeholder: 'If any ?', required: false
+		=f.input :hsuniversity,  label: "Name of University/Company", required: false
+		=f.input :hsprogramme ,  label: "Name of Program/Post", required: false
+		=f.input :extras ,required: false, maxlength: 2000 , minlength: 2 ,placeholder:'Any Extra information that you want to provide goes here' , label: 'Extra Information'
+
+		.lead
+			*Please Enclose a copy of FIR lodged with Police station in case of loss of document and duplicate copy of such documet is required*
+		= f.input :fircopy , as: :file, required: false
+		= f.submit "Submit" , class:'btn btn-success'
+		=link_to 'Cancel' , root_path
+	.margin

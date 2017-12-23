@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'thankyou' , to: 'home#thankyou' , as: :thankyou
    resources :feedbacks , only: [:new,:create]
   resources :conversations, only: [:index, :show, :destroy]
-   resources :requests , only: [:create,:new,:show]
+   resources :requests
    namespace :passwordadmin do 
     resources :users, only: :show do 
       post :generate_new_password_email 

@@ -1,8 +1,46 @@
-.container-fluid
-	.h3 Status:
-	.h4
-		Status for Request number #
+.container
+	.h3.text-centered
+		Request no. 
 		=@request.id
-		is
-		=@request.status.current_status
-		%small= 'Requested by: '+@request.fullname
+	%table.table.table-bordered.table-hover
+		%thead.thead-dark
+			%tr
+				%th Confirm your details
+		%tbody
+			%tr
+				%th Your Name
+				%td= @request.fullname
+			%tr
+				%th Your Father's Name
+				%td= @request.fathername
+			%tr
+				%th Your Email
+				%td= @request.email
+			%tr
+				%th Your Contact
+				%td= @request.contact
+			%tr
+				%th Your address
+				%td= @request.address_1
+				%td= @request.state
+				%td= @request.city
+				%td= @request.zipcode
+			%tr
+				%th Your enrollment number
+				%td= @request.enrollment_no
+			%tr
+				%th Your Batch
+				%td= @request.batch
+			%tr
+				%th Your Course
+				%td= @request.course
+			%tr
+				%th Your College
+				%td= @college.name
+		
+			%tr
+				%th Institute's recovery fee
+				%td= @request.fullname
+	=link_to 'edit request' , edit_request_path(@request) , class:'btn btn-primary'
+	=link_to 'delete request' , request_path(@request), method: :delete , data: {Confirm: "Are you sure? This will delete ak your saved information."}  , class:'btn btn-danger'
+	=link_to 'Procees to payment' , '#' , class:'btn btn-success'
