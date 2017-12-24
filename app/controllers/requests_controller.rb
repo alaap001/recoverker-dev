@@ -3,7 +3,8 @@ class RequestsController < ApplicationController
   before_action :find_request , only: [:show,:edit,:update,:destroy,:payment]
 	
   def show
-    @college = College.find_by(id: @request.college_id) 
+    @college = College.find_by(id: @request.college_id)
+    @institute = Institute.find_by(id: @request.institute_id) 
 
 #hide environmetal variables
 
@@ -53,6 +54,7 @@ def payment
  phone = @request.contact
  fullname = @request.fullname
  email = @request.email
+ amount = @request
  #time = Time.now+3.days
 
 
@@ -79,7 +81,7 @@ end
   end
   end
   def request_params
-  	params.require(:request).permit(:fullname,:email,:contact,:reason,:payment_id,:payment_url,:payment_status,:address_1,:address_2,:state,:city,:fircopy,:zipcode,:fathername,:enrollment_no,:batch,:course,:extras,:college_id,:hsuniversity,:hsprogramme,:hsemployer)
+  	params.require(:request).permit(:fullname,:email,:contact,:reason,:institute_id,:payment_id,:payment_url,:payment_status,:address_1,:address_2,:state,:city,:fircopy,:zipcode,:fathername,:enrollment_no,:batch,:course,:extras,:college_id,:hsuniversity,:hsprogramme,:hsemployer)
   end
 
 end

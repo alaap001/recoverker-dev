@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171224145206) do
+ActiveRecord::Schema.define(version: 20171224161256) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -149,7 +149,7 @@ ActiveRecord::Schema.define(version: 20171224145206) do
     t.string   "payment_status"
     t.string   "payment_id"
     t.string   "payment_url"
-    t.         "institute"
+    t.integer  "institute_id"
     t.index ["college_id"], name: "index_requests_on_college_id"
     t.index ["email"], name: "index_requests_on_email"
     t.index ["user_id"], name: "index_requests_on_user_id"
