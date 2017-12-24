@@ -4,13 +4,13 @@
 
 jQuery ->
 	
-	institutes = $('#request_institute').html();
+	institutes = $('#request_institute_id').html();
 	$('#request_college_id').change ->
 		college = $('#request_college_id :selected').text()
 		options = $(institutes).filter("optgroup[label='#{college}']").html()
 		if options
-			$('#request_institute').html(options)
-			$('#request_institute').parent().show()
+			$('#request_institute_id').html(options)
+			$('#request_institute_id').parent().show()
 		else
-			$('request_institute').empty()
+			$('request_institute_id').empty()
 			
