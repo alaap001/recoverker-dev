@@ -57,7 +57,7 @@ def payment
 
 
     #@payment_request = client.payment_request({amount:1020, purpose:reason,phone:phone,buyer_name:fullname, email:email,send_email:true,send_sms:true, redirect_url:'localhost:3000/thankyou'})
-    @payment_request = client.payment_request({amount:10, purpose: reason, send_email: true,phone:phone,buyer_name:fullname, email:email, redirect_url: 'http://ankurgoel.com'})
+    @payment_request = client.payment_request({amount:10, purpose: reason, send_email: true,phone:phone,buyer_name:fullname, email:email, redirect_url: 'http://recoverker.com/thankyou'})
     payment_details = client.payment_request_status(@payment_request.id)
     payment_id = payment_details.id
     payment_status = payment_details.status
