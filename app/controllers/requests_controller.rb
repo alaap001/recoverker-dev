@@ -5,6 +5,7 @@ class RequestsController < ApplicationController
   def show
     @college = College.find_by(id: @request.college_id) 
 
+#hide environmetal variables
 
 
   end
@@ -23,7 +24,6 @@ class RequestsController < ApplicationController
       if @request.save
      
            redirect_to @request
-           puts url
         else
     		render 'new'
     	end
@@ -57,14 +57,16 @@ def payment
 
 
     #@payment_request = client.payment_request({amount:1020, purpose:reason,phone:phone,buyer_name:fullname, email:email,send_email:true,send_sms:true, redirect_url:'localhost:3000/thankyou'})
-    @payment_request = client.payment_request({amount:100, purpose: reason, send_email: true,phone:phone,buyer_name:fullname, email:email, redirect_url: 'http://ankurgoel.com'})
+    @payment_request = client.payment_request({amount:10, purpose: reason, send_email: true,phone:phone,buyer_name:fullname, email:email, redirect_url: 'http://ankurgoel.com'})
     payment_details = client.payment_request_status(@payment_request.id)
-    @request.payment_id = payment_details.id
-    @request.payment_status = payment_details.status
-    @request.payment_url = payment_details.longurl
-    url =  payment_details.longurl    
-    redirect_to url      
-    
+    payment_id = payment_details.id
+    payment_status = payment_details.status
+    payment_url = payment_details.longurl
+    @request.update(payment_id: payment_id,payment_status: payment_status, payment_url:payment_url)
+    url =  payment_details.longurl 
+    if @request.save
+      redirect_to url       
+    end  
 end
 
   private 
