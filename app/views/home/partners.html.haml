@@ -1,1 +1,47 @@
-.h1.text-center Our Partners
+.container
+	.h1.text-center Our Partners
+	%br
+	%hr
+	%hr
+	%br
+	%table.table.table-bordered.table-hover
+		%thead
+			%tr
+				%th Partners
+				
+
+		%tbody
+			%tr
+				%th 1
+				%td=image_tag 'University_1' , class:'thumbnail partner_img'
+				%td
+					.lead Amity Institute of Technology
+					%em 
+						Average Cost to recover degree - 
+						%b Rs. 1000/-
+
+					%br
+					=link_to 'Apply' , new_request_path, class: 'btn btn-success btn-lg'
+
+			%tr
+				%th 2
+				%td=image_tag 'University_2' , class:'thumbnail partner_img'
+				%td
+					.lead Amity Business School
+					%em 
+						Average Cost to recover degree - 
+						%b Rs. 1000/-
+
+					%br
+					=link_to 'Apply' , new_request_path, class: 'btn btn-success btn-lg'
+			%tr
+				%th 3
+				%td=image_tag 'University_1' , class:'thumbnail partner_img'
+				%td
+					.lead Amity International Shool of Business
+					%em 
+						Average Cost to recover degree - 
+						%b Rs. 1000/-
+
+					%br
+					=link_to 'Apply' , new_request_path, class: 'btn btn-success btn-lg'

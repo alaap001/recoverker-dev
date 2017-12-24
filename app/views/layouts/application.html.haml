@@ -55,6 +55,7 @@
 								%li{'data-target':'#application_process' , 'data-toggle':'modal'} 
 									.help_link Application Process
 								%li=link_to 'Apply' , new_request_path
+								%li=link_to 'Our partners' , partners_path
 
 
 							#searchform
@@ -67,4 +68,5 @@
 
 		.container-fluid
 			=yield
+			=render 'home/footer'
 =render 'home/help'

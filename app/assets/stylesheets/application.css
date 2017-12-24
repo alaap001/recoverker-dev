@@ -34,11 +34,6 @@
 .margin{
 	height: 30px;
 }
-.footer{
-	height: 180px;
-	padding-top: 50px;
-	margin-bottom: 10px;
-}
 #corousal_home{
 	height: 500px;
 }
@@ -97,29 +92,10 @@ margin-top: 170px;
 .help_link:hover{
 	color: black;
 }
-@media only screen and (max-width: 600px){
 
-#div1{
-	background-image: url(bg_2);
-	overflow: hidden;
-	height: 800px;
-	width: 100%;
-	text-align: center;
-	color: #fff;
-	padding: 120px 15px 100px 0px; 
-	background-size: cover;
-}
-
-#div1 p{
-	font-size: 40px;
-font-weight: 700;
-margin-top: 80px;
-}
-
-.iphone6{
-	height: 450px;
-}
-
+.partner_img{
+	width: 340px;
+	height: 240px;
 }
 
 #div1 small{
@@ -204,15 +180,49 @@ zoom: 120%;
 	color: white;
 	background-image: url(user_2);
 	background-size: cover;
-	height: 300px;
+	height: 200px;
+	padding-top: 30px;
+	margin-bottom: 15px;
 }
 
 .footer li{
 display: inline-block;
 	text-decoration: none;
-	margin: 45px 25px 20px 25px;
+	margin: 20px 25px 10px 25px;
 }
 .black_th{
 background-color: black;
 color: white;
 }
+
+
+@media only screen and (max-width: 600px){
+
+#div1{
+	background-image: url(bg_2);
+	overflow: hidden;
+	height: 800px;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	padding: 120px 15px 100px 0px; 
+	background-size: cover;
+}
+
+#div1 p{
+	font-size: 40px;
+font-weight: 700;
+margin-top: 80px;
+}
+
+.iphone6{
+	height: 450px;
+}
+
+.partner_img{
+	width: 240px;
+	height: 140px;
+}
+
+}
+

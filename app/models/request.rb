@@ -4,6 +4,7 @@ has_one :status
 #scope :passed , -> { joins(:status).where("statuses.passed = true")  }
 belongs_to :user
 belongs_to :college
+belongs_to :institute
 
 VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 #validates_associated :status, :college,:user

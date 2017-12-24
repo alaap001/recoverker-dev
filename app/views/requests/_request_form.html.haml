@@ -6,9 +6,10 @@
 
 		= f.error_notification
 		=f.association :college 
+		=f.input :institute, collection: College.all, as: :grouped_select, group_method: :institutes
 		=f.input :fullname , label: 'Full Name', error: 'Name is mandatory, please specify one'
 		=f.input :fathername, label: "Father's name", hint: 'Skip the Salutations'
-		%b Email
+		%b Email 
 		.input-group
 			.input-group-addon
 				@

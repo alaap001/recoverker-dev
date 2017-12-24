@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171223123500) do
+ActiveRecord::Schema.define(version: 20171224145206) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -57,6 +57,15 @@ ActiveRecord::Schema.define(version: 20171223123500) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_feedbacks_on_user_id"
+  end
+
+  create_table "institutes", force: :cascade do |t|
+    t.integer  "college_id"
+    t.integer  "recfee"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.index ["college_id"], name: "index_institutes_on_college_id"
   end
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
@@ -140,6 +149,7 @@ ActiveRecord::Schema.define(version: 20171223123500) do
     t.string   "payment_status"
     t.string   "payment_id"
     t.string   "payment_url"
+    t.         "institute"
     t.index ["college_id"], name: "index_requests_on_college_id"
     t.index ["email"], name: "index_requests_on_email"
     t.index ["user_id"], name: "index_requests_on_user_id"
