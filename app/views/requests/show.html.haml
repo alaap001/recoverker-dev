@@ -51,8 +51,10 @@
 
 	=link_to 'edit request' , edit_request_path(@request) , class:'btn btn-primary'
 	=link_to 'delete request' , request_path(@request), method: :delete , data: {Confirm: "Are you sure? This will delete ak your saved information."}  , class:'btn btn-danger'
-	-if @request.payment_status !='Completed'
+	-if @request.payment_status == nil || @request.payment_status =='Failed' || @request.payment_status =='Sent'
 		=link_to 'Make Payment' , payment_path(@request) , class: 'btn btn-success'
-	-else
-		=link_to 'Payment Is Completes' , ' ' , class: 'btn btn-disabled'
+	-elsif @request.payment_status =='Pending'
+		=link_to 'Payment Is Processing' , '#' , class: 'btn btn-default disabled'
+	-else @request.payment_status =='Completed'
+		=link_to 'Payment Is Completed' , '#' , class: 'btn btn-default disabled'
 	

@@ -14,10 +14,10 @@ selectable_column
 column :id , sortable: true
 column :email
 column :fullname
+column :institute
 column :college
 column :payment_url
 column :payment_status
-column "FIR COPY" , :fircopy
 
 actions	
 
