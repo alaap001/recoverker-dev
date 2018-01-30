@@ -208,6 +208,17 @@ color: white;
 
 @media only screen and (max-width: 600px){
 
+.about_text{
+	font-weight: 900;
+	font-size: 28px;
+	text-transform: capitalize;
+	padding-top: 20px;
+}	
+.about_icon{
+	margin-top: 14px;
+	font-size: 30px;
+}
+
 #div1{
 	background-image: url(bg_2);
 	overflow: hidden;
